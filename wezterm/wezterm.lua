@@ -16,37 +16,45 @@ config.show_new_tab_button_in_tab_bar = false
 config.show_close_tab_button_in_tabs = false
 
 -- Tab Color Settings
- wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
 
-   local background = "#5c6d74"
+ local background = "#5c6d74"
 
-   local foreground = "#FFFFFF"
-
-
-   if tab.is_active then
-
-     background = "#ff90b3"
-
-     foreground = "#ffffff"
-
-   end
+ local foreground = "#FFFFFF"
 
 
-   local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+ if tab.is_active then
+
+   background = "#ff90b3"
+
+   foreground = "#ffffff"
+
+ end
 
 
-   return {
+ local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
 
-     { Background = { Color = background } },
 
-     { Foreground = { Color = foreground } },
+ return {
 
-     { Text = title },
+   { Background = { Color = background } },
 
-   }
+   { Foreground = { Color = foreground } },
 
- end)
+   { Text = title },
 
+ }
+
+end)
+
+-- Window Frame Non Visualize
+config.window_frame = {
+
+   inactive_titlebar_bg = "none",
+
+   active_titlebar_bg = "none",
+
+}
 
 -- set Leader Key
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
