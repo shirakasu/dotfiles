@@ -15,6 +15,39 @@ config.window_decorations = "RESIZE"
 config.show_new_tab_button_in_tab_bar = false
 config.show_close_tab_button_in_tabs = false
 
+-- Tab Color Settings
+ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+
+   local background = "#5c6d74"
+
+   local foreground = "#FFFFFF"
+
+
+   if tab.is_active then
+
+     background = "#ff90b3"
+
+     foreground = "#ffffff"
+
+   end
+
+
+   local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
+
+
+   return {
+
+     { Background = { Color = background } },
+
+     { Foreground = { Color = foreground } },
+
+     { Text = title },
+
+   }
+
+ end)
+
+
 -- set Leader Key
 config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1000 }
 
