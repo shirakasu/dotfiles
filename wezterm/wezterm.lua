@@ -25,7 +25,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 
  if tab.is_active then
 
-   background = "#ff90b3"
+   background = "#ebbcba"
 
    foreground = "#ffffff"
 
