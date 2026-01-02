@@ -1,6 +1,9 @@
 local wezterm = require 'wezterm'
 local config = {}
 
+-- If your OS is Windows, make sure to uncomment this line
+-- config.default_prog = { "C:\\Program Files\\Git\\bin\\bash.exe" }
+
 -- setting font Hack Nerd Font
 config.font = wezterm.font 'Hack Nerd Font'
 
