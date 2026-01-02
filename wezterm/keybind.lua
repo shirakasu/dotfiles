@@ -1,10 +1,11 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
+local mod = wezterm.target_triple == 'x86_64-pc-windows-msvc' and 'CTRL' or 'SUPER'
 
 return {
   -- Copy and Paste
-  { key = "c", mods = "SUPER", action = act.CopyTo("Clipboard")},
-  { key = "v", mods = "SUPER", action = act.PasteFrom("Clipboard")},
+  { key = "c", mods = mod, action = act.CopyTo("Clipboard")},
+  { key = "v", mods = mod, action = act.PasteFrom("Clipboard")},
 
   -- Tab Move
   { key = "Tab", mods = "CTRL", action = act.ActivateTabRelative(1) },
