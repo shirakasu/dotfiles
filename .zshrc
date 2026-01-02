@@ -148,3 +148,6 @@ eval "$(pyenv init -)"
 
 # wezterm PATH
 export PATH="/Applications/WezTerm.app/Contents/MacOS:$PATH"
+
+# json mock server path
+export PATH="$HOME/.nvm/versions/node/v24.12.0/bin:$PATH"
