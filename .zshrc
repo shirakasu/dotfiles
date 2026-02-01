@@ -30,8 +30,8 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/gcc-arm-none-eabi-6-2017-q1-update/bin:$PATH"
 
 # Neovim PATH
-export PATH="$HOME/nvim-macos-arm64/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+# export PATH="$HOME/nvim-macos-arm64/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # pyenv PATH
 export PYENV_ROOT="$HOME/.pyenv"
