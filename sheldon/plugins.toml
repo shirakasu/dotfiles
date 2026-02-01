@@ -11,3 +11,6 @@ github = "zsh-users/zsh-syntax-highlighting"
 
 [plugins.zsh-bat]
 github = "fdellwing/zsh-bat"
+
+[plugins.zsh-eza]
+github = "z-shell/zsh-eza"
