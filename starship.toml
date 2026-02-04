@@ -12,6 +12,8 @@ $line_break\
 $python\
 $character"""
 
+right_format = """$time"""
+
 [directory]
 style = "blue"
 
@@ -49,3 +51,10 @@ format = "[$virtualenv]($style) "
 style = "bold yellow"
 detect_extensions = []
 detect_files = []
+
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%H:%M"
+use_12hr = false
+style = "bright gray"
