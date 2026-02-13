@@ -229,6 +229,9 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+    awful.key({ modkey, "Shift" }, "l", function ()
+        awful.spawn.with_shell("betterlockscreen -l blur")
+    end, {description = "lock screen with blur effect", group = "hotkeys"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
