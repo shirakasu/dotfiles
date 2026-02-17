@@ -1,42 +1,43 @@
--------------------------------
---  "Zenburn" awesome theme  --
---    By Adrian C. (anrxc)   --
--------------------------------
-
 local themes_path = require("gears.filesystem").get_themes_dir()
-local rnotification = require("ruled.notification")
 local dpi = require("beautiful.xresources").apply_dpi
-
--- {{{ Main
+local palette = require("palette.rosepine")
 local theme = {}
-theme.wallpaper = "/home/shirakasu/downloads/wallpaper/pink-dawn.jpg"
--- }}}
 
--- {{{ Styles
-theme.font      = "sans 8"
+-- ======================
+-- Initialize Wallpaper
+-- ======================
+theme.wallpaper = os.getenv("HOME") .. "/downloads/wallpaper/pink-dawn.jpg"
 
--- {{{ Colors
-theme.fg_normal  = "#DCDCCC"
-theme.fg_focus   = "#F0DFAF"
-theme.fg_urgent  = "#CC9393"
-theme.bg_normal  = "#3F3F3F"
-theme.bg_focus   = "#1E2320"
-theme.bg_urgent  = "#3F3F3F"
+-- ======================
+-- Styles
+-- ======================
+theme.font = "Hack Nerd Font 10"
+
+-- ======================
+-- Colors
+-- ======================
+theme.fg_normal  = palette.text
+theme.fg_focus   = palette.iris
+theme.fg_urgent  = palette.base
+theme.bg_normal  = palette.base
+theme.bg_focus   = palette.surface
+theme.bg_urgent  = palette.love
 theme.bg_systray = theme.bg_normal
--- }}}
 
--- {{{ Borders
+-- ======================
+-- Borders
+-- ======================
 theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(2)
-theme.border_color_normal = "#3F3F3F"
-theme.border_color_active = "#6F6F6F"
-theme.border_color_marked = "#CC9393"
--- }}}
+theme.border_normal = palette.overlay
+theme.border_focus  = palette.pine
+theme.border_marked = palette.rose
 
--- {{{ Titlebars
-theme.titlebar_bg_focus  = "#3F3F3F"
-theme.titlebar_bg_normal = "#3F3F3F"
--- }}}
+-- ======================
+-- Titlebars
+-- ======================
+theme.titlebar_bg_focus  = palette.surface
+theme.titlebar_bg_normal = palette.base
 
 -- There are other variable sets
 -- overriding the default one when
@@ -48,7 +49,9 @@ theme.titlebar_bg_normal = "#3F3F3F"
 --theme.taglist_bg_focus = "#CC9393"
 -- }}}
 
--- {{{ Widgets
+-- ======================
+-- Widgets
+-- ======================
 -- You can add as many variables as
 -- you wish and access them by using
 -- beautiful.variable in your rc.lua
@@ -57,29 +60,39 @@ theme.titlebar_bg_normal = "#3F3F3F"
 --theme.fg_end_widget    = "#FF5656"
 --theme.bg_widget        = "#494B4F"
 --theme.border_widget    = "#3F3F3F"
--- }}}
 
--- {{{ Menu
+-- ======================
+-- Mouse finder
+-- ======================
+theme.mouse_finder_color = "#CC9393"
+-- mouse_finder_[timeout|animate_timeout|radius|factor]
+
+-- ======================
+-- Menu
+-- ======================
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_height = dpi(15)
+theme.menu_height = dpi(20)
 theme.menu_width  = dpi(100)
--- }}}
 
--- {{{ Icons
--- {{{ Taglist
+
+-- ======================
+-- Taglist Icons
+-- ======================
 theme.taglist_squares_sel   = themes_path .. "zenburn/taglist/squarefz.png"
 theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
 --theme.taglist_squares_resize = "false"
--- }}}
 
--- {{{ Misc
-theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
+-- ======================
+-- Misc Icons
+-- ======================
+-- theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
 theme.menu_submenu_icon      = themes_path .. "default/submenu.png"
--- }}}
 
--- {{{ Layout
+-- ======================
+-- Layout Icons
+-- ======================
 theme.layout_tile       = themes_path .. "zenburn/layouts/tile.png"
 theme.layout_tileleft   = themes_path .. "zenburn/layouts/tileleft.png"
 theme.layout_tilebottom = themes_path .. "zenburn/layouts/tilebottom.png"
@@ -96,9 +109,10 @@ theme.layout_cornernw   = themes_path .. "zenburn/layouts/cornernw.png"
 theme.layout_cornerne   = themes_path .. "zenburn/layouts/cornerne.png"
 theme.layout_cornersw   = themes_path .. "zenburn/layouts/cornersw.png"
 theme.layout_cornerse   = themes_path .. "zenburn/layouts/cornerse.png"
--- }}}
 
--- {{{ Titlebar
+-- ======================
+-- Titlebar Icons
+-- ======================
 theme.titlebar_close_button_focus  = themes_path .. "zenburn/titlebar/close_focus.png"
 theme.titlebar_close_button_normal = themes_path .. "zenburn/titlebar/close_normal.png"
 
