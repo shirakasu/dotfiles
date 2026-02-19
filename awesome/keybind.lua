@@ -1,7 +1,15 @@
-local awful = require("awful")
+pcall(require, "luarocks.loader")
+
 local gears = require("gears")
-local hotkeys_popup = require("awful.hotkeys_popup")
+local awful = require("awful")
+require("awful.autofocus")
+local wibox = require("wibox")
+local beautiful = require("beautiful")
+local naughty = require("naughty")
 local menubar = require("menubar")
+local hotkeys_popup = require("awful.hotkeys_popup")
+require("awful.hotkeys_popup.keys")
+
 local modkey = "Mod4"
 local terminal = "wezterm"
 
@@ -27,16 +35,18 @@ local globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    
+
     -- =================================
     -- Application Launcher Bindings
     -- =================================
+    awful.key({ modkey, "Shift"}, "l", function () awful.spawn.with_shell("betterlockscreen -l blur") end,
+              {description = "lock screen with blur effect", group = "launcher"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
     awful.key({ "Control"         }, "r",      function () awful.spawn("rofi -show drun") end,
               {description = "show rofi launcher", group = "launcher"}),
     awful.key({ modkey            }, "p",      function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
 
     -- =================================
     -- Screen (Monitor) Bindings
@@ -55,7 +65,7 @@ local globalkeys = gears.table.join(
               {description = "view right workspace", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "view previous workspace", group = "tag"}),
-    
+
     -- =================================
     -- Client (Window) Bindings
     -- =================================
@@ -116,9 +126,7 @@ local globalkeys = gears.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
-              {description = "select previous", group = "layout"}),
-
-    
+              {description = "select previous", group = "layout"})
 )
 
 -- =================================
