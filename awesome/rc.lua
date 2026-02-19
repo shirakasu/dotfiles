@@ -45,7 +45,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/shirakasu/.config/awesome/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "wezterm"
@@ -228,7 +228,7 @@ root.buttons(gears.table.join(
 -- }}}
 
 -- {{{ Key bindings
-local globalkeys = require('keybindings')
+local globalkeys = require('keybind')
 
 clientkeys = gears.table.join(
     awful.key({ modkey,           }, "f",
@@ -412,11 +412,11 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c)
-    c.border_color = beautiful.border_focus
+    c.border_color = beautiful.border_focus or "#ff0000"
 end)
 
 client.connect_signal("unfocus", function(c)
-    c.border_color = beautiful.border_normal
+    c.border_color = beautiful.border_normal or "#ff0000"
 end)
 
 -- }}}

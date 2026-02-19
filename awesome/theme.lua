@@ -6,7 +6,7 @@ local theme = {}
 -- ======================
 -- Initialize Wallpaper
 -- ======================
-theme.wallpaper = os.getenv("HOME") .. "/downloads/wallpaper/pink-dawn.jpg"
+theme.wallpaper = "/home/shirakasu/downloads/wallpaper/rosepine-portal-cake.png"
 
 -- ======================
 -- Styles
@@ -87,7 +87,7 @@ theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
 -- ======================
 -- Misc Icons
 -- ======================
--- theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
+theme.awesome_icon           = themes_path .. "zenburn/awesome-icon.png"
 theme.menu_submenu_icon      = themes_path .. "default/submenu.png"
 
 -- ======================
@@ -140,14 +140,6 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path .. "zenburn/titleb
 theme.titlebar_maximized_button_normal_inactive = themes_path .. "zenburn/titlebar/maximized_normal_inactive.png"
 -- }}}
 -- }}}
-
--- Set different colors for urgent notifications.
-rnotification.connect_signal('request::rules', function()
-    rnotification.append_rule {
-        rule       = { urgency = 'critical' },
-        properties = { bg = '#ff0000', fg = '#ffffff' }
-    }
-end)
 
 return theme
 
