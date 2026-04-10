@@ -31,8 +31,8 @@ return {
   { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
 
   -- Create New Tab and Close Tab
-  { key = "t", mods = "SUPER", action = act.SpawnTab("CurrentPaneDomain")},
-  { key = "w", mods = "SUPER", action = act.CloseCurrentTab({ confirm = true })},
+  { key = "t", mods = mod, action = act.SpawnTab("CurrentPaneDomain")},
+  { key = "w", mods = mod, action = act.CloseCurrentTab({ confirm = true })},
 
   -- Reload Configuration
   { key = "r", mods = "SUPER", action = act.ReloadConfiguration }
