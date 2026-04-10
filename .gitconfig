@@ -1,3 +1,5 @@
 [user]
 	email = antith.private@gmail.com
 	name = shirakasu
+[core]
+	symlinks = true
