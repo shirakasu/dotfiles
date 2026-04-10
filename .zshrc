@@ -1,3 +1,6 @@
+
+zstyle ':completion:*' matcher-list 'm:{a-z A-Z}={A-Z a-z}'
+
 # .local PATH
 export PATH="$HOME/.local/bin:$PATH"
 
