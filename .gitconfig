@@ -3,3 +3,5 @@
 	name = shirakasu
 [core]
 	symlinks = true
+[init]
+	defaultBranch = main
