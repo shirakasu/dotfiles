@@ -25,7 +25,8 @@ return {
   { key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 
   -- Select Pane
-  { key = "[", mods = "LEADER", action = act.PaneSelect },
+  { key = "{", mods = "LEADER", action = act.PaneSelect { mode = "SwapWithActive"} },
+  { key = "[", mods = "LEADER", action = act.PaneSelect { mode = "Activate"} },
 
   -- View Selected Pane Only
   { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
@@ -35,5 +36,9 @@ return {
   { key = "w", mods = mod, action = act.CloseCurrentTab({ confirm = true })},
 
   -- Reload Configuration
-  { key = "r", mods = "SUPER", action = act.ReloadConfiguration }
+  { key = "r", mods = "SUPER", action = act.ReloadConfiguration },
+
+  -- Adjust Pane Size
+  { key = "H", mods = "LEADER", action = act.AdjustPaneSize { "Left", 5 }},
+  { key = "L", mods = "LEADER", action = act.AdjustPaneSize { "Right", 5 }},
 }
