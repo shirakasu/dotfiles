@@ -86,20 +86,26 @@ function M.setup(s, opts)
         widget_template = {
             {
                 {
-                    id = "text_role",
-                    widget = wibox.widget.textbox
+                    {
+                        id = "text_role",
+                        widget = wibox.widget.textbox
+                    },
+                    left = 10,
+                    right = 10,
+                    top = 5,
+                    bottom = 5,
+                    widget = wibox.container.margin
                 },
-                left = 10,
-                right = 10,
-                top = 5,
-                bottom = 5,
-                widget = wibox.container.margin
+                id = "background_role",
+                shape = gears.shape.circle,
+                widget = wibox.container.background
             },
-            id = "background_role",
-            shape = gears.shape.rounded_rect,
-            widget = wibox.container.background
+            left = 2,
+            right = 2,
+            top = 4,
+            bottom = 4,
+            widget = wibox.container.margin
         }
-
     }
 
     s.mytasklist = awful.widget.tasklist {
