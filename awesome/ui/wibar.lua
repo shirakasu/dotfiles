@@ -1,5 +1,7 @@
 local cpu = require("ui.widgets.cpu")
 local memory = require("ui.widgets.memory")
+local volume = require("ui.widgets.volume")
+
 local beautiful = require("beautiful")
 
 local awful = require("awful")
@@ -84,30 +86,6 @@ function M.setup(s, opts)
             spacing = 4,
             layout = wibox.layout.fixed.horizontal
         },
-
-        -- widget_template = {
-        --     {
-        --         {
-        --             {
-        --                 id = "text_role",
-        --                 widget = wibox.widget.textbox
-        --             },
-        --             left = 10,
-        --             right = 10,
-        --             top = 5,
-        --             bottom = 5,
-        --             widget = wibox.container.margin
-        --         },
-        --         id = "background_role",
-        --         shape = gears.shape.circle,
-        --         widget = wibox.container.background
-        --     },
-        --     left = 2,
-        --     right = 2,
-        --     top = 4,
-        --     bottom = 4,
-        --     widget = wibox.container.margin
-        -- }
 
         widget_template = {
             {
@@ -199,6 +177,12 @@ function M.setup(s, opts)
             },
             {
                 memory,
+                left = 8,
+                right = 8,
+                widget = wibox.container.margin
+            },
+            {
+                volume,
                 left = 8,
                 right = 8,
                 widget = wibox.container.margin
