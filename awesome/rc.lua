@@ -45,7 +45,10 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(os.getenv("HOME") .. "/.config/awesome/theme.lua")
+beautiful.init(
+    gears.filesystem.get_configuration_dir()
+    .. "themes/rose-pine.lua"
+)
 
 -- This is used later as the default terminal and editor to run.
 terminal = "wezterm"
