@@ -141,6 +141,26 @@ theme.titlebar_maximized_button_normal_inactive = themes_path .. "zenburn/titleb
 -- }}}
 -- }}}
 
+--- Taglist
+theme.taglist_bg_focus = "#c4a7e7"
+theme.taglist_fg_focus = "#191724"
+
+theme.taglist_bg_occupied = "#403d52"
+theme.taglist_fg_occupied = "#e0def4"
+
+theme.taglist_bg_empty = "#26233a"
+theme.taglist_fg_empty = "#908caa"
+
+theme.taglist_bg_urgent = "#eb6f92"
+theme.taglist_fg_urgent = "#191724"
+
+theme.targlist_bg_volatile = "#26233a"
+theme.targlist_bg_volatile = "#e0def4"
+
+--- Remove default tag squares
+theme.taglist_squares_sel = nil
+theme.taglist_squares_unsel = nil
+
 return theme
 
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

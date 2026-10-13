@@ -1,3 +1,5 @@
+local beautiful = require("beautiful")
+
 local awful = require("awful")
 local gears = require("gears")
 local wibox = require("wibox")
@@ -73,7 +75,32 @@ function M.setup(s, opts)
     s.mytaglist = awful.widget.taglist {
         screen = s,
         filter = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
+        layout = {
+            spacing = 4,
+            layout = wibox.layout.fixed.horizontal
+        },
+        widget_template = {
+            {
+                {
+                    {
+                        id = "text_role",
+                        widget = wibox.widget.textbox
+                    },
+                    left = 10,
+                    right = 10,
+                    top = 5,
+                    bottom = 5,
+                    widget = wibox.container.margin
+                },
+                id = "background_role",
+                shape = function (cr, width, height)
+                    gears.shape.rounded_rect(cr, width, height, 6)
+                end,
+                widget = wibox.container.background
+            },
+            widget = wibox.container.margin
+        },
     }
 
     s.mytasklist = awful.widget.tasklist {
@@ -85,7 +112,10 @@ function M.setup(s, opts)
     -- Wibar
     s.mywibox = awful.wibar({
         position = "top",
-        screen = s
+        screen = s,
+        height = 36,
+        bg = "#26233a",
+        fg = "#e0def4"
     })
 
     s.mywibox:setup {
