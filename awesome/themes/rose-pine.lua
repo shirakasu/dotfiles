@@ -153,7 +153,7 @@ theme.taglist_bg_urgent = "#eb6f92"
 theme.taglist_fg_urgent = "#191724"
 
 theme.taglist_bg_volatile = "#26233a"
-theme.taglist_bg_volatile = "#e0def4"
+theme.taglist_fg_volatile = "#e0def4"
 
 --- Remove default tag squares
 theme.taglist_squares_sel   = ""
