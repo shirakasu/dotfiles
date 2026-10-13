@@ -1,6 +1,7 @@
 local cpu = require("ui.widgets.cpu")
 local memory = require("ui.widgets.memory")
 local volume = require("ui.widgets.volume")
+local music = require("ui.widgets.music")
 
 local beautiful = require("beautiful")
 
@@ -183,6 +184,12 @@ function M.setup(s, opts)
             },
             {
                 volume,
+                left = 8,
+                right = 8,
+                widget = wibox.container.margin
+            },
+            {
+                music,
                 left = 8,
                 right = 8,
                 widget = wibox.container.margin
