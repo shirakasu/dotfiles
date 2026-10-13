@@ -1,6 +1,6 @@
 local themes_path = require("gears.filesystem").get_themes_dir()
 local dpi = require("beautiful.xresources").apply_dpi
-local palette = require("palette.rosepine")
+local palette = require("palette.rose-pine")
 local theme = {}
 
 -- ======================
@@ -80,8 +80,6 @@ theme.menu_width  = dpi(100)
 -- ======================
 -- Taglist Icons
 -- ======================
-theme.taglist_squares_sel   = themes_path .. "zenburn/taglist/squarefz.png"
-theme.taglist_squares_unsel = themes_path .. "zenburn/taglist/squarez.png"
 --theme.taglist_squares_resize = "false"
 
 -- ======================
@@ -154,12 +152,12 @@ theme.taglist_fg_empty = "#908caa"
 theme.taglist_bg_urgent = "#eb6f92"
 theme.taglist_fg_urgent = "#191724"
 
-theme.targlist_bg_volatile = "#26233a"
-theme.targlist_bg_volatile = "#e0def4"
+theme.taglist_bg_volatile = "#26233a"
+theme.taglist_bg_volatile = "#e0def4"
 
 --- Remove default tag squares
-theme.taglist_squares_sel = nil
-theme.taglist_squares_unsel = nil
+theme.taglist_squares_sel   = ""
+theme.taglist_squares_unsel = ""
 
 return theme
 

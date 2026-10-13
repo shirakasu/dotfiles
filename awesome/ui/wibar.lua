@@ -95,47 +95,11 @@ function M.setup(s, opts)
                 bottom = 5,
                 widget = wibox.container.margin
             },
-
             id = "background_role",
-            bg = "#26233a",
-            shape = function(cr, width, height)
-                gears.shape.rounded_rect(cr, width, height, 6)
-            end,
-            widget = wibox.container.background,
-
-            create_callback = function(self, tag)
-                local function update()
-                    local bg = self:get_children_by_id("background_role")[1]
-                    local text = self:get_children_by_id("text_role")[1]
-
-                    if tag.selected then
-                        bg.bg = "#c4a7e7"
-                        text:set_markup(
-                            '<span foreground="#191724">' .. tag.name .. '</span>'
-                        )
-                    elseif #tag:clients() > 0 then
-                        bg.bg = "#403d52"
-                        text:set_markup(
-                            '<span foreground="#e0def4">' .. tag.name .. '</span>'
-                        )
-                    else
-                        bg.bg = "#26233a"
-                        text:set_markup(
-                            '<span foreground="#908caa">' .. tag.name .. '</span>'
-                        )
-                    end
-                end
-
-                self.update_tag = update
-                update()
-            end,
-
-            update_callback = function(self)
-                if self.update_tag then
-                    self.update_tag()
-                end
-            end
+            shape = gears.shape.rounded_rect,
+            widget = wibox.container.background
         }
+
     }
 
     s.mytasklist = awful.widget.tasklist {
