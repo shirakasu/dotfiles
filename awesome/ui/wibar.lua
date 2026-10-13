@@ -83,6 +83,30 @@ function M.setup(s, opts)
             layout = wibox.layout.fixed.horizontal
         },
 
+        -- widget_template = {
+        --     {
+        --         {
+        --             {
+        --                 id = "text_role",
+        --                 widget = wibox.widget.textbox
+        --             },
+        --             left = 10,
+        --             right = 10,
+        --             top = 5,
+        --             bottom = 5,
+        --             widget = wibox.container.margin
+        --         },
+        --         id = "background_role",
+        --         shape = gears.shape.circle,
+        --         widget = wibox.container.background
+        --     },
+        --     left = 2,
+        --     right = 2,
+        --     top = 4,
+        --     bottom = 4,
+        --     widget = wibox.container.margin
+        -- }
+
         widget_template = {
             {
                 {
@@ -96,16 +120,45 @@ function M.setup(s, opts)
                     bottom = 5,
                     widget = wibox.container.margin
                 },
-                id = "background_role",
-                shape = gears.shape.circle,
+
+                id = "tag_background",
+                bg = "#26233a",
+                shape = function(cr, width, height)
+                    gears.shape.rounded_rect(cr, width, height, 8)
+                end,
                 widget = wibox.container.background
             },
+
             left = 2,
             right = 2,
             top = 4,
             bottom = 4,
-            widget = wibox.container.margin
-        }
+            widget = wibox.container.margin,
+
+            create_callback = function(self, tag)
+                local bg = self:get_children_by_id("tag_background")[1]
+
+                local function update()
+                    if tag.selected then
+                        bg.bg = beautiful.taglist_bg_focus
+                    elseif #tag:clients() > 0 then
+                        bg.bg = beautiful.taglist_bg_occupied
+                    else
+                        bg.bg = beautiful.taglist_bg_empty
+                    end
+                end
+
+                self.update_tag = update
+                update()
+            end,
+
+            update_callback = function(self)
+                if self.update_tag then
+                    self.update_tag()
+                end
+            end
+        },
+
     }
 
     s.mytasklist = awful.widget.tasklist {
