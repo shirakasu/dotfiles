@@ -140,23 +140,23 @@ theme.titlebar_maximized_button_normal_inactive = themes_path .. "zenburn/titleb
 -- }}}
 
 --- Taglist
-theme.taglist_bg_focus = "#c4a7e7"
-theme.taglist_fg_focus = "#191724"
+theme.taglist_bg_focus = palette.iris
+theme.taglist_fg_focus = palette.base
 
-theme.taglist_bg_occupied = "#403d52"
-theme.taglist_fg_occupied = "#e0def4"
+theme.taglist_bg_occupied = palette.highlight_med
+theme.taglist_fg_occupied = palette.text
 
-theme.taglist_bg_empty = "#26233a"
-theme.taglist_fg_empty = "#908caa"
+theme.taglist_bg_empty = palette.overlay
+theme.taglist_fg_empty = palette.subtle
 
-theme.taglist_bg_urgent = "#eb6f92"
-theme.taglist_fg_urgent = "#191724"
+theme.taglist_bg_urgent = palette.love
+theme.taglist_fg_urgent = palette.base
 
-theme.taglist_bg_volatile = "#26233a"
-theme.taglist_fg_volatile = "#e0def4"
+theme.taglist_bg_volatile = palette.overlay
+theme.taglist_fg_volatile = palette.text
 
---- Remove default tag squares
-theme.taglist_squares_sel   = ""
+-- Remove default tag squares
+theme.taglist_squares_sel = ""
 theme.taglist_squares_unsel = ""
 
 return theme
