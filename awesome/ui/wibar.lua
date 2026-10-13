@@ -1,4 +1,5 @@
 local cpu = require("ui.widgets.cpu")
+local memory = require("ui.widgets.memory")
 local beautiful = require("beautiful")
 
 local awful = require("awful")
@@ -192,6 +193,12 @@ function M.setup(s, opts)
             wibox.widget.systray(),
             {
                 cpu,
+                left = 8,
+                right = 8,
+                widget = wibox.container.margin
+            },
+            {
+                memory,
                 left = 8,
                 right = 8,
                 widget = wibox.container.margin
