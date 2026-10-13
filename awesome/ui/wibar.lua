@@ -1,3 +1,4 @@
+local cpu = require("ui.widgets.cpu")
 local beautiful = require("beautiful")
 
 local awful = require("awful")
@@ -189,6 +190,12 @@ function M.setup(s, opts)
             layout = wibox.layout.fixed.horizontal,
             opts.keyboardlayout,
             wibox.widget.systray(),
+            {
+                cpu,
+                left = 8,
+                right = 8,
+                widget = wibox.container.margin
+            },
             opts.textclock,
             s.mylayoutbox
         }
