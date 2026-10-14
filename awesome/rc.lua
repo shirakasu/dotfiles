@@ -344,3 +344,6 @@ client.connect_signal("unfocus", function(c)
 end)
 
 -- }}}
+
+-- AutoStart
+awful.spawn.once("fcitx5 -d")

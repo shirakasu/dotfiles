@@ -161,7 +161,6 @@ function M.setup(s, opts)
         layout = wibox.layout.align.horizontal,
         {
             layout = wibox.layout.fixed.horizontal,
-            opts.launcher,
             s.mytaglist,
             s.mypromptbox
         },

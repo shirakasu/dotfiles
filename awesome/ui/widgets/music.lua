@@ -1,5 +1,6 @@
 local awful = require("awful")
 local wibox = require("wibox")
+local gears = require("gears")
 
 local function control(symbol, command)
     local widget = wibox.widget {
@@ -9,14 +10,11 @@ local function control(symbol, command)
         widget = wibox.widget.textbox
     }
 
-    widget:buttons({
+    widget:buttons(gears.table.join(
         awful.button({}, 1, function()
-            awful.spawn.easy_async(
-                { "playerctl", command },
-                function() end
-            )
+            awful.spawn({ "playerctl", command })
         end)
-    })
+    ))
 
     return widget
 end
